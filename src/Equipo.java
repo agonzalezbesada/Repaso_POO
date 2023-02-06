@@ -12,12 +12,21 @@ public class Equipo {
 
     private String nombre; // El nombre del equipamiento (MISC)
 
+    private boolean accion_especial;
+
     Equipo(){}
 
     public Equipo(int nivel_rareza, int nivel, String nombre) {
         this.nivel_rareza = asignar_rareza(nivel_rareza);
         this.nivel = nivel;
         this.nombre = nombre;
+    }
+
+    public Equipo(int nivel_rareza, int nivel, String nombre, boolean accion_especial) {
+        this.nivel_rareza= asignar_rareza(nivel_rareza);
+        this.nivel = nivel;
+        this.nombre = nombre;
+        this.accion_especial = accion_especial;
     }
 
     /**

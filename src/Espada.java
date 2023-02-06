@@ -8,6 +8,7 @@ public class Espada extends Arma{
         super(nivel_rareza, nivel, nombre, damage, multiplicador, distancia, tiempo_para_damage);
     }
 
+    @Override
     public double doing_damage(double distancia_enemigo) {
         if (distancia_enemigo<=getDistancia()) {
             return getMultiplicador() * getDamage() * (getDistancia()-distancia_enemigo);
