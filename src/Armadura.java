@@ -11,8 +11,8 @@ public class Armadura extends Equipo{
         this.multiplicador = multiplicador;
     }
 
-    public Armadura(int nivel_rareza, int nivel, String nombre, double defensa, double multiplicador, boolean accion_especial) {
-        super(nivel_rareza, nivel, nombre, accion_especial);
+    public Armadura(int nivel_rareza, int nivel, String nombre, double defensa, double multiplicador) {
+        super(nivel_rareza, nivel, nombre);
         this.defensa = defensa;
         this.multiplicador = multiplicador;
     }

@@ -8,8 +8,12 @@ public class Casco extends Armadura{
 
     }
 
-    Casco(int nivel_rareza, int nivel, String nombre, double defensa, double multiplicador, boolean accion_especial) {
-        super(nivel_rareza, nivel, nombre, defensa, multiplicador, accion_especial);
-        this.proyectil = accion_especial;
+    Casco(int nivel_rareza, int nivel, String nombre, double defensa, double multiplicador) {
+        super(nivel_rareza, nivel, nombre, defensa, multiplicador);
+    }
+
+    @Override
+    public boolean accion_especial(boolean proyectil) {
+        return proyectil;
     }
 }
