@@ -20,12 +20,20 @@ public class Main {
         objetos[4] = botas;
 
 
-        for (int i = 0; i<3;i++) {
-            System.out.println("Daño de la espada: "+espada.doing_damage((int) (Math.random()*3+0)));
-            System.out.println("Daño de la lanza"+lanza.doing_damage((int) (Math.random()*3+0)));
-            System.out.println("Daño del hacha: "+hacha.doing_damage((int) (Math.random()*3+0)));
-            System.out.println("Protectil recibido: "+casco.accion_especial(true));
-            System.out.println("Daño melee o a distancia recibido: "+botas.accion_especial(false, true)+"\n");
+        for (Object g : objetos) {
+            if (g instanceof Arma) {
+                /*
+                 Aquí hago que el double del random sea de 2 decimales máximo, ya que doing_damage recibe un double,
+                 pero esto reduce drásticamente la media de los daños, ya que hay más números posibles
+                 */
+                System.out.println("Daño: "+((Arma) g).doing_damage(Math.round((Math.random()*(3-0+1)+0)*100)/100d));
+            }
+            if (g instanceof Casco) {
+                System.out.println(((Casco)g).accion_especial(true));
+            }
+            if (g instanceof Botas) {
+                System.out.println(((Botas)g).accion_especial(true, false));
+            }
         }
     }
 }
